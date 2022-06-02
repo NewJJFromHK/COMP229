@@ -1,0 +1,10 @@
+(function(){
+
+    function Start()
+    {
+        HTMLFormControlsCollection.log("App Started!");
+    }
+
+    window.addEventListener(l)
+
+})()

@@ -15,11 +15,11 @@ const server = http.createServer(function(req, res) // sth like server = new Ser
 
     if(path =="/" || path =="/home")
     {
-        path = "/index.html";
+        pth = "/index.html";
     }
 
     let mime_type = lookup(path.substring(1));
-    //console.log(`MIME TYPE: ${mime_type}`);
+    console.log(`MIME TYPE: ${mime_type}`);
 
     //console.log(__dirname);
 
@@ -28,13 +28,13 @@ const server = http.createServer(function(req, res) // sth like server = new Ser
 if(err)
 {
     res.writeHead(404); //status - file not found
-    //console.log(`ERROR: ${err.message}`); // output to the dev console
+    console.log(`ERROR: ${err.message}`); // output to the dev console
     return res.end("ERROR: 404 - File Not Found"); //output the error msg to the page
 }
 // no error
-res.setHeader("X-Content-Type-Options", "nosniff"); //security guard
-res.writeHead(200, {'Content-Type': mime_type}); //status - all ok
-//console.log(`DATA: ${data}`);
+//res.writeHead(200); //status - all ok
+res.setHeader("X-Content-Type-Options", "")
+console.log(`DATA: ${data}`);
 return res.end(data); //output the file that was read to the page
     });
 });

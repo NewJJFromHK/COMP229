@@ -15,11 +15,11 @@ const server = http.createServer(function(req, res) // sth like server = new Ser
 
     if(path =="/" || path =="/home")
     {
-        path = "/index.html";
+        pth = "/index.html";
     }
 
     let mime_type = lookup(path.substring(1));
-    //console.log(`MIME TYPE: ${mime_type}`);
+    console.log(`MIME TYPE: ${mime_type}`);
 
     //console.log(__dirname);
 

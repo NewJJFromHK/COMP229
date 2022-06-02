@@ -15,11 +15,11 @@ const server = http.createServer(function(req, res) // sth like server = new Ser
 
     if(path =="/" || path =="/home")
     {
-        path = "/index.html";
+        pth = "/index.html";
     }
 
     let mime_type = lookup(path.substring(1));
-    //console.log(`MIME TYPE: ${mime_type}`);
+    console.log(`MIME TYPE: ${mime_type}`);
 
     //console.log(__dirname);
 
@@ -28,7 +28,7 @@ const server = http.createServer(function(req, res) // sth like server = new Ser
 if(err)
 {
     res.writeHead(404); //status - file not found
-    //console.log(`ERROR: ${err.message}`); // output to the dev console
+    console.log(`ERROR: ${err.message}`); // output to the dev console
     return res.end("ERROR: 404 - File Not Found"); //output the error msg to the page
 }
 // no error

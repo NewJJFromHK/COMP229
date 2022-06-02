@@ -11,30 +11,20 @@ const port = 3000;
 const server = http.createServer(function(req, res) // sth like server = new Server();
 {
 
-    let path = req.url; // alias for req.url
-
-    if(path =="/" || path =="/home")
-    {
-        path = "/index.html";
-    }
-
-    let mime_type = lookup(path.substring(1));
-    //console.log(`MIME TYPE: ${mime_type}`);
-
+    let path = req.url;
     //console.log(__dirname);
 
-    fs.readFile(__dirname + path, function(err, data)
+    fs.readFile(__dirname + req.url, function(err, data)
     {
 if(err)
 {
     res.writeHead(404); //status - file not found
-    //console.log(`ERROR: ${err.message}`); // output to the dev console
-    return res.end("ERROR: 404 - File Not Found"); //output the error msg to the page
+    console.log(`ERROR: ${err.message}`); // output to the dev console
+    return res.end(err.message); //output the error msg to the page
 }
 // no error
-res.setHeader("X-Content-Type-Options", "nosniff"); //security guard
-res.writeHead(200, {'Content-Type': mime_type}); //status - all ok
-//console.log(`DATA: ${data}`);
+res.writeHead(200); //status - all ok
+console.log(`DATA: ${data}`);
 return res.end(data); //output the file that was read to the page
     });
 });
