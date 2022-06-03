@@ -1,0 +1,11 @@
+{
+  "name": "comp229-m2022-week233",
+  "version": "0.0.1",
+  "description": "demo project for comp229 in the M2022 semester at Centennial College",
+  "main": "server.js",
+  "author": "Kevin Lee",
+  "license": "MIT",
+  "dependencies": {
+    "mime-types": "^2.1.35"
+  }
+}
