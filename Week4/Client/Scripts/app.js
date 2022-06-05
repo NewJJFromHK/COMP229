@@ -1,7 +1,7 @@
 "use strict";
 (function () {
     function Start() {
-        HTMLFormControlsCollection.log("App Started!");
+        console.log("App Started!");
         let XHR = new XMLHttpRequest();
         XHR.open("GET", "../data/data.json");
         XHR.send();
