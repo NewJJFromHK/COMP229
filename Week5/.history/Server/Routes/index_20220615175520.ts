@@ -2,7 +2,7 @@ import express from 'express';
 const router = express.Router();
 
 //import the controller module
-import {DisplayAboutPage, DisplayContactPage, DisplayHomePage, DisplayProjectPage, DisplayServicesPage} from "../Controllers/index"
+import {DisplayAboutPage, DisplayHomePage, DisplayProjectPage} from "../Controllers/index"
 
 /* Display home page. */
 router.get('/', DisplayHomePage);
@@ -17,9 +17,12 @@ router.get('/about', DisplayAboutPage);
 router.get('/projects', DisplayProjectPage);
 
 /* Display services page. */
-router.get('/services', DisplayServicesPage);
+router.get('/services', );
 
 /* Display contact page. */
-router.get('/contact', DisplayContactPage);
+router.get('/contact', function(req: express.Request, res: express.Response, next: express.NextFunction) 
+{
+  res.render('index', { title: 'Contact Us', page: 'contact' });
+});
 
 export default router;
