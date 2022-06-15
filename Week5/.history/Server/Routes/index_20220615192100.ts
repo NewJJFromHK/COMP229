@@ -6,7 +6,7 @@ import {DisplayAboutPage, DisplayContactPage, DisplayHomePage, DisplayProjectPag
 
 //The other way to import the controller module
 // import * as IndexController from '../Controllers/index';
-//IndexController.
+//IndexController
 
 /* Display home page. */
 router.get('/', DisplayHomePage);

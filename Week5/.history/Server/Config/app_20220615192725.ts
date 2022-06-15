@@ -15,9 +15,8 @@ const app = express();
 //Step 2 - Complete the DB Configuration
 import * as DBConfig from './db';
 mongoose.connect(DBConfig.LocalURI);
-const db = mongoose.connection; //alias for the mongoose connection
 
-//Step 3 - Listen for Connections on Errors
+const db = mongoose.connection; //alias for the mongoose connection
 db.on("open", function()
 {
   console.log(`Connected to MongoDB at: ${DBConfig.HostName}`);

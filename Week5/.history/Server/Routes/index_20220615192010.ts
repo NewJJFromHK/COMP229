@@ -4,9 +4,7 @@ const router = express.Router();
 //import the controller module
 import {DisplayAboutPage, DisplayContactPage, DisplayHomePage, DisplayProjectPage, DisplayServicesPage} from "../Controllers/index"
 
-//The other way to import the controller module
-// import * as IndexController from '../Controllers/index';
-//IndexController.
+//
 
 /* Display home page. */
 router.get('/', DisplayHomePage);
