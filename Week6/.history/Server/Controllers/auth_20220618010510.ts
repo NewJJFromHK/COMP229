@@ -78,19 +78,14 @@ export function ProcessRegisterPage(req: express.Request, res: express.Response,
             return res.redirect('/register');
         }
 
-        //everything is ok - user has been registered
+        //everything is ok - user has been registerd
 
         //automatically login the user
-        return passport.authenticate('local')(req, res, function()
-        {
-            return res.redirect('/movie-list');
-        });
-    });
+        return passport.authenticate('local')(req, res, )
+    })
 }
 
 export function ProcessLogoutPage(req: express.Request, res: express.Response, next: express.NextFunction)
 {
-    req.logOut();
-
-    res.redirect('/login');
+    
 }

@@ -84,13 +84,11 @@ export function ProcessRegisterPage(req: express.Request, res: express.Response,
         return passport.authenticate('local')(req, res, function()
         {
             return res.redirect('/movie-list');
-        });
-    });
+        })
+    })
 }
 
 export function ProcessLogoutPage(req: express.Request, res: express.Response, next: express.NextFunction)
 {
-    req.logOut();
-
-    res.redirect('/login');
+    
 }

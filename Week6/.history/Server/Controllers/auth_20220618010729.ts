@@ -85,7 +85,7 @@ export function ProcessRegisterPage(req: express.Request, res: express.Response,
         {
             return res.redirect('/movie-list');
         });
-    });
+    })
 }
 
 export function ProcessLogoutPage(req: express.Request, res: express.Response, next: express.NextFunction)
