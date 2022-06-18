@@ -11,10 +11,10 @@ export function UserDisplayName(req: express.Request): String
     return '';
 }
 
-//helper middleware function for guarding secure locations
-export function AuthGuard(req: express.Request, res: express.Response, next: express.NextFunction): void
+//helper middle function for guarding secure locations
+export function AuthGuard(req: express.Request, res: express.Response, next: express.NextFunction)
 {
-    if(!req.isAuthenticated())
+    if(!req.isAuthenticated)
     {
         return res.redirect('/login');
     }

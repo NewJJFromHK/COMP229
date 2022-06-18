@@ -37,7 +37,7 @@ export function ProcessLoginPage(req: express.Request, res: express.Response, ne
         }
 
         //no problems - we have a good username and password
-        req.logIn(user, function(err)
+        req.logIn(user, function(err))
         {
             //are there db error?
             if(err)
@@ -46,9 +46,9 @@ export function ProcessLoginPage(req: express.Request, res: express.Response, ne
                 res.end(err);
             }
 
-            return res.redirect('/movie-list');
-        });
-    })(req, res, next);
+            return res
+        }
+    })
 }
 
 export function ProcessRegisterPage(req: express.Request, res: express.Response, next: express.NextFunction)

@@ -5,6 +5,6 @@ import {AuthGuard} from '../Util'
 
 import {DisplayMovieList} from '../Controllers/movie-list';
 
-router.get('/movie-list', AuthGuard ,  DisplayMovieList);
+router.get('/movie-list', Ath DisplayMovieList);
 
 export default router;

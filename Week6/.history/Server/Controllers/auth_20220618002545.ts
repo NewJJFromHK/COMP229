@@ -26,29 +26,9 @@ export function ProcessLoginPage(req: express.Request, res: express.Response, ne
         if(err)
         {
             console.error(err)
-            res.end(err);
+            res.end(err)
         }
-
-        //are there login errors?
-        if(!user)
-        {
-            req.flash('loginMessage', 'Authentication error!');
-            return res.redirect('/login');
-        }
-
-        //no problems - we have a good username and password
-        req.logIn(user, function(err)
-        {
-            //are there db error?
-            if(err)
-            {
-                console.error(err);
-                res.end(err);
-            }
-
-            return res.redirect('/movie-list');
-        });
-    })(req, res, next);
+    })
 }
 
 export function ProcessRegisterPage(req: express.Request, res: express.Response, next: express.NextFunction)
