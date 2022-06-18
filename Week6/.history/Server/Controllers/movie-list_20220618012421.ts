@@ -2,7 +2,7 @@ import express from 'express';
 
 import Movie from '../Models/movie';
 
-import { UserDisplayName } from '../Util';
+import { UserDisplayName } from
 
 export function DisplayMovieList(req: express.Request, res: express.Response, next: express.NextFunction)
 {
@@ -13,7 +13,7 @@ export function DisplayMovieList(req: express.Request, res: express.Response, ne
             console.error(err);
             res.end(err);
         }
-        res.render('index', {title: 'Movie List', page: 'movie-list', movies: moviesCollection, displayName: UserDisplayName(req)});
+        res.render('index', {title: 'Movie List', page: 'movie-list', movies: moviesCollection, displayName: '' });
     });
 
 }

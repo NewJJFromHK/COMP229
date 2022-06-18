@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { UserDisplayName } from "../Util";
+import { UserdisplayName } from "../Util";
 
 export function DisplayHomePage(req: express.Request, res: express.Response, next: express.NextFunction)
 {

@@ -6,18 +6,17 @@ import passport from 'passport';
 //need to include the Use model for authentication functions
 import User from '../Models/user';
 
-//import the DisplayName Utility method
-import { UserDisplayName } from '../Util';
+//import the DisplayName Utili
 
 //Display Functions
 export function DisplayLoginPage(req: express.Request, res: express.Response, next: express.NextFunction)
 {
-    res.render('index', {title: 'Login', page: 'login', messages: req.flash('loginMessage'), displayName: UserDisplayName(req)});
+    res.render('index', {title: 'Login', page: 'login', messages: req.flash('loginMessage'), displayName: ''});
 }
 
 export function DisplayRegisterPage(req: express.Request, res: express.Response, next: express.NextFunction)
 {
-    res.render('index', {title: 'Register', page: 'Register', messages: req.flash('registerMessage'), displayName: UserDisplayName(req)});
+    res.render('index', {title: 'Register', page: 'Register', messages: req.flash('registerMessage'), displayName: ''});
 }
 
 //Processing Functions
