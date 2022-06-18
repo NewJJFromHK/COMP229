@@ -22,5 +22,5 @@ export function DisplayServicesPage(req: express.Request, res: express.Response,
 
 export function DisplayContactPage(req: express.Request, res: express.Response, next: express.NextFunction)
 {
-    res.render('index', { title: 'Contact Us', page: 'contact',  displayName: ''  });
+    res.render('index', { title: 'Contact Us', page: 'contact' });
 }
