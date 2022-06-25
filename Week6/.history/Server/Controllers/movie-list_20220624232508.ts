@@ -24,22 +24,17 @@ export function DisplayAddPage(req: express.Request, res: express.Response, next
 
 }
 
-export function DisplayEditPage(req: express.Request, res: express.Response, next: express.NextFunction)
+export function DisplayMovieList(req: express.Request, res: express.Response, next: express.NextFunction)
 {
     
 }
 
-export function ProcessAddPage(req: express.Request, res: express.Response, next: express.NextFunction)
+export function DisplayMovieList(req: express.Request, res: express.Response, next: express.NextFunction)
 {
     
 }
 
-export function ProcessEditPage(req: express.Request, res: express.Response, next: express.NextFunction)
-{
-    
-}
-
-export function ProcessDeletePage(req: express.Request, res: express.Response, next: express.NextFunction)
+export function DisplayMovieList(req: express.Request, res: express.Response, next: express.NextFunction)
 {
     
 }

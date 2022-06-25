@@ -29,17 +29,12 @@ export function DisplayEditPage(req: express.Request, res: express.Response, nex
     
 }
 
-export function ProcessAddPage(req: express.Request, res: express.Response, next: express.NextFunction)
+export function DisplayMovieList(req: express.Request, res: express.Response, next: express.NextFunction)
 {
     
 }
 
-export function ProcessEditPage(req: express.Request, res: express.Response, next: express.NextFunction)
-{
-    
-}
-
-export function ProcessDeletePage(req: express.Request, res: express.Response, next: express.NextFunction)
+export function DisplayMovieList(req: express.Request, res: express.Response, next: express.NextFunction)
 {
     
 }
