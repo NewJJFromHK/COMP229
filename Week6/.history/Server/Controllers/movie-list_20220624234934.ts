@@ -51,19 +51,6 @@ export function ProcessAddPage(req: express.Request, res: express.Response, next
         "Director": req.body.movieDirector,
         "Year": req.body.movieYear,
         "Rating": req.body.movieRating
-    });
-
-    //Insert the new Movie object into the database (movie collection)
-    Movie.create(newMovie, function(err: ErrorCallback)
-    {
-        if(err)
-        {
-            console.error(err);
-            res.end(err)
-        }
-
-        //new movie has been added -> refresh the movie-list
-        res.redirect('/movie-list');
     })
 }
 

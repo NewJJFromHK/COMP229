@@ -63,7 +63,7 @@ export function ProcessAddPage(req: express.Request, res: express.Response, next
         }
 
         //new movie has been added -> refresh the movie-list
-        res.redirect('/movie-list');
+        res.redirect(/movie-list)
     })
 }
 

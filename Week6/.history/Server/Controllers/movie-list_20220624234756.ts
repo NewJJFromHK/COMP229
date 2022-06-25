@@ -46,25 +46,7 @@ export function DisplayEditPage(req: express.Request, res: express.Response, nex
 export function ProcessAddPage(req: express.Request, res: express.Response, next: express.NextFunction)
 {
     //instantiate a new Movie to add
-    let newMovie = new Movie({
-        "Name": req.body.movieName,
-        "Director": req.body.movieDirector,
-        "Year": req.body.movieYear,
-        "Rating": req.body.movieRating
-    });
-
-    //Insert the new Movie object into the database (movie collection)
-    Movie.create(newMovie, function(err: ErrorCallback)
-    {
-        if(err)
-        {
-            console.error(err);
-            res.end(err)
-        }
-
-        //new movie has been added -> refresh the movie-list
-        res.redirect('/movie-list');
-    })
+    let
 }
 
 export function ProcessEditPage(req: express.Request, res: express.Response, next: express.NextFunction)

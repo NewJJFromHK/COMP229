@@ -54,16 +54,13 @@ export function ProcessAddPage(req: express.Request, res: express.Response, next
     });
 
     //Insert the new Movie object into the database (movie collection)
-    Movie.create(newMovie, function(err: ErrorCallback)
+    Movie.create(newMovie, function(err: ErrorC)
     {
         if(err)
         {
             console.error(err);
             res.end(err)
         }
-
-        //new movie has been added -> refresh the movie-list
-        res.redirect('/movie-list');
     })
 }
 
