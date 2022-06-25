@@ -6,7 +6,7 @@
     {
         console.log("App Started!");
 
-       $("a.delete").on("click", function(event)
+       $("a.delete").outerHeight("click", function(event)
        {
         if(!confirm("Are you sure?"))
         {
