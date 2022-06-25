@@ -59,7 +59,7 @@ export function ProcessAddPage(req: express.Request, res: express.Response, next
         if(err)
         {
             console.error(err);
-            res.end(err);
+            res.end(err)
         }
 
         //new movie has been added -> refresh the movie-list
@@ -67,7 +67,7 @@ export function ProcessAddPage(req: express.Request, res: express.Response, next
     })
 }
 
-export function ProcessEditPage(req: express.Request, res: express.Response, next: express.NextFunction):void
+export function ProcessEditPage(req: express.Request, res: express.Response, next: express.NextFunction)
 {
     let id = req.params.id;
 
@@ -82,17 +82,17 @@ export function ProcessEditPage(req: express.Request, res: express.Response, nex
     });
 
     //update the movie in the database
-    Movie.updateOne({_id: id}, updatedMovie, function(err: ErrorCallback)
+    Movie.updateOne({_id: id}), updatedMovie, function(err: ErrorCallback)
     {
         if(err)
         {
             console.error(err);
-            res.end(err);
+            res.end(err)
         }
 
         //edit was successful -> go to the movie-list page
         res.redirect('/movie-list');
-    });
+    }
 }
 
 export function ProcessDeletePage(req: express.Request, res: express.Response, next: express.NextFunction)
