@@ -21,12 +21,12 @@ export function DisplayMovieList(req: express.Request, res: express.Response, ne
 
 export function DisplayAddPage(req: express.Request, res: express.Response, next: express.NextFunction)
 {
-    res.render('index', {title: 'Add', page: 'edit', movie: '', displayName: UserDisplayName(req) });
+    res.render('index', {title: 'Add', page: 'edit', movie: '', displayName: UserDisplayName(req) })
 }
 
 export function DisplayEditPage(req: express.Request, res: express.Response, next: express.NextFunction)
 {
-    res.render('index', {title: 'Add', page: 'edit', movie: '', displayName: UserDisplayName(req) });
+    
 }
 
 export function ProcessAddPage(req: express.Request, res: express.Response, next: express.NextFunction)
