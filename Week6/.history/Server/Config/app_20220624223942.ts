@@ -27,7 +27,6 @@ import indexRouter from '../Routes/index'; //top-level routes
 import movieListRouter from '../Routes/movie-list'; //movie-list routes
 import authRouter from '../Routes/auth'; //authentication routes
 
-//create the application object - which is of type express
 const app = express();
 
 //Complete the DB Configuration
@@ -38,8 +37,8 @@ const db = mongoose.connection; //alias for the mongoose connection
 //Listen for Connections on Errors
 db.on("open", function()
 {
-  console.log(`Connected to MongoDB at: ${(DBConfig.RemoteURI) ? DBConfig.HostName : "localhost"}`);
-});
+  console.log(`Connected to MongoDB at: ${DBConfig.HostName}`);
+})
 
 db.on("error", function()
 {
