@@ -29,7 +29,7 @@ export function DisplayEditPage(req: express.Request, res: express.Response, nex
     let id = req.params.id;
 
     //pass the id to the db and read the movie into the edit page
-    Movie.findById(id, {}, {}, function(err,movieToEdit)
+    Movie.findById(id. {}, {}, function(err,movieToEdit)
     {
         if(err)
         {
