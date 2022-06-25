@@ -1,5 +1,4 @@
 import express from 'express';
-import { CallbackError } from 'mongoose';
 
 //import the Movie Model
 import Movie from '../Models/movie';

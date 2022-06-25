@@ -1,5 +1,4 @@
 import express from 'express';
-import { CallbackError } from 'mongoose';
 
 //import the Movie Model
 import Movie from '../Models/movie';
@@ -96,12 +95,12 @@ export function ProcessEditPage(req: express.Request, res: express.Response, nex
     });
 }
 
-export function ProcessDeletePage(req: express.Request, res: express.Response, next: express.NextFunction): void
+export function ProcessDeletePage(req: express.Request, res: express.Response, next: express.NextFunction):void
 {
     let id = req.params.id;
 
     //pass the id to the database and delete the movie
-    Movie.remove({_id: id}, function(err: CallbackError)
+    Movie.remove({_id:id}, function(err: CallbackError)
     {
         if(err)
         {
@@ -111,5 +110,5 @@ export function ProcessDeletePage(req: express.Request, res: express.Response, n
 
         //delete was successful
         res.redirect('/movie-list');
-    });
+    })
 }

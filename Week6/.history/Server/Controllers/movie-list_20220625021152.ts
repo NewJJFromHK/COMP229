@@ -101,7 +101,7 @@ export function ProcessDeletePage(req: express.Request, res: express.Response, n
     let id = req.params.id;
 
     //pass the id to the database and delete the movie
-    Movie.remove({_id: id}, function(err: CallbackError)
+    Movie.remove({_id: id}, function(err: CallbackErrorg)
     {
         if(err)
         {

@@ -1,12 +1,11 @@
 import express from 'express';
-import { CallbackError } from 'mongoose';
 
 //import the Movie Model
 import Movie from '../Models/movie';
 
 import { UserDisplayName } from '../Util';
 
-export function DisplayMovieList(req: express.Request, res: express.Response, next: express.NextFunction):void
+export function DisplayMovieList(req: express.Request, res: express.Response, next: express.NextFunction)
 {
     Movie.find(function(err, moviesCollection)
     {
@@ -20,12 +19,12 @@ export function DisplayMovieList(req: express.Request, res: express.Response, ne
 
 }
 
-export function DisplayAddPage(req: express.Request, res: express.Response, next: express.NextFunction):void
+export function DisplayAddPage(req: express.Request, res: express.Response, next: express.NextFunction)
 {
     res.render('index', {title: 'Add', page: 'edit', movie: '', displayName: UserDisplayName(req) });
 }
 
-export function DisplayEditPage(req: express.Request, res: express.Response, next: express.NextFunction):void
+export function DisplayEditPage(req: express.Request, res: express.Response, next: express.NextFunction)
 {
     let id = req.params.id;
 
@@ -55,7 +54,7 @@ export function ProcessAddPage(req: express.Request, res: express.Response, next
     });
 
     //Insert the new Movie object into the database (movie collection)
-    Movie.create(newMovie, function(err: CallbackError)
+    Movie.create(newMovie, function(err: ErrorCallback)
     {
         if(err)
         {
@@ -83,7 +82,7 @@ export function ProcessEditPage(req: express.Request, res: express.Response, nex
     });
 
     //update the movie in the database
-    Movie.updateOne({_id: id}, updatedMovie, function(err: CallbackError)
+    Movie.updateOne({_id: id}, updatedMovie, function(err: ErrorCallback)
     {
         if(err)
         {
@@ -96,20 +95,10 @@ export function ProcessEditPage(req: express.Request, res: express.Response, nex
     });
 }
 
-export function ProcessDeletePage(req: express.Request, res: express.Response, next: express.NextFunction): void
+export function ProcessDeletePage(req: express.Request, res: express.Response, next: express.NextFunction):void
 {
     let id = req.params.id;
 
     //pass the id to the database and delete the movie
-    Movie.remove({_id: id}, function(err: CallbackError)
-    {
-        if(err)
-        {
-            console.error(err);
-            res.end(err);
-        }
-
-        //delete was successful
-        res.redirect('/movie-list');
-    });
+    Movie.remove({_id:id}, )
 }
