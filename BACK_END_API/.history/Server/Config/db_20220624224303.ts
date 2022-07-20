@@ -1,0 +1,7 @@
+import { RemoteURI } from './../../.history/Server/Config/db_20220618021718';
+export const LocalURI = "mongodb://127.0.0.1/media";
+//export const RemoteURI = "mongodb+srv://kevin:9LrbXw9kFV62fzxh@cluster0.v8t42.mongodb.net/media?retryWrites=true&w=majority";
+export const RemoteURI= process.env.RemoteURI;
+
+export const HostName = "MongoDB Atlas";
+export const Secret = "someSecret";
