@@ -78,7 +78,7 @@ export function ProcessRegisterPage(req: express.Request, res: express.Response,
 
         //everything is ok - user has been registered
 
-        return res.json({success: true, msg: 'User Registered Successfully!'}); 
+        return res.json({sucess: true, msg: 'User Registered Successfully!'}); 
 
     });
 }

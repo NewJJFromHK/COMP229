@@ -73,13 +73,16 @@ export function ProcessRegisterPage(req: express.Request, res: express.Response,
             {
                 console.error(err.name); // other error
             }
-            return res.json({success: false, msg: 'ERROR: Registration Failed!'});
+            return res.json({success: false, msg: 'ERROR: Registe'});
         }
 
         //everything is ok - user has been registered
 
-        return res.json({success: true, msg: 'User Registered Successfully!'}); 
-
+        //automatically login the user
+        return passport.authenticate('local')(req, res, function()
+        {
+            return res.redirect('/movie-list');
+        });
     });
 }
 
