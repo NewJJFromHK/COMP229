@@ -41,10 +41,9 @@ export function ProcessLoginPage(req: express.Request, res: express.Response, ne
 
             return res.json({success: true, msg: 'User Logged in Successfully!', user: {
                 id: user._id,
-                DisplayName: user.DisplayName,
-                username: user.username,
-                EmailAddress: user.EmailAddress
-            }, token: authToken});
+                
+
+            }})
         });
 
         return;

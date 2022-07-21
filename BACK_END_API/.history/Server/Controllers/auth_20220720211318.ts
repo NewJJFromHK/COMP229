@@ -6,8 +6,7 @@ import passport from 'passport';
 //need to include the Use model for authentication functions
 import User from '../Models/user';
 
-//need to import the JWT Utility Function
-import { GenerateToken } from '../Util';
+//need 
 
 //Processing Functions
 export function ProcessLoginPage(req: express.Request, res: express.Response, next: express.NextFunction)
@@ -24,7 +23,8 @@ export function ProcessLoginPage(req: express.Request, res: express.Response, ne
         //are there login errors?
         if(!user)
         {
-            return res.json({success: false, msg: 'ERROR: Authentication Failed'});
+            req.flash('loginMessage', 'Authentication error!');
+            return res.redirect('/login');
         }
 
         //no problems - we have a good username and password
@@ -37,17 +37,8 @@ export function ProcessLoginPage(req: express.Request, res: express.Response, ne
                 res.end(err);
             }
 
-            const authToken = GenerateToken(user);
-
-            return res.json({success: true, msg: 'User Logged in Successfully!', user: {
-                id: user._id,
-                DisplayName: user.DisplayName,
-                username: user.username,
-                EmailAddress: user.EmailAddress
-            }, token: authToken});
+            return res.redirect('/movie-list');
         });
-
-        return;
     })(req, res, next);
 }
 

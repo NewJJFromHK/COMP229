@@ -44,7 +44,7 @@ export function ProcessLoginPage(req: express.Request, res: express.Response, ne
                 DisplayName: user.DisplayName,
                 username: user.username,
                 EmailAddress: user.EmailAddress
-            }, token: authToken});
+            }})
         });
 
         return;

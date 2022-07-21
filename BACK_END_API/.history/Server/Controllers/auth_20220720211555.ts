@@ -24,7 +24,7 @@ export function ProcessLoginPage(req: express.Request, res: express.Response, ne
         //are there login errors?
         if(!user)
         {
-            return res.json({success: false, msg: 'ERROR: Authentication Failed'});
+                        return res.redirect('/login');
         }
 
         //no problems - we have a good username and password
@@ -37,17 +37,8 @@ export function ProcessLoginPage(req: express.Request, res: express.Response, ne
                 res.end(err);
             }
 
-            const authToken = GenerateToken(user);
-
-            return res.json({success: true, msg: 'User Logged in Successfully!', user: {
-                id: user._id,
-                DisplayName: user.DisplayName,
-                username: user.username,
-                EmailAddress: user.EmailAddress
-            }, token: authToken});
+            return res.redirect('/movie-list');
         });
-
-        return;
     })(req, res, next);
 }
 
